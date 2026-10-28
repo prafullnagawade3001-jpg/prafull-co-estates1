@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .welcome {
+    color: #B08D57;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    color: #343B2E;
+    font-size: 38px;
+}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f5ef;
+            color: #343b2e;
+        }
+
+        header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            background: #fffdf9;
+        }
+
+        h1, h2 {
+            font-family: Georgia, serif;
+        }
+
+        .hero {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 90%;
+            max-width: 600px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #343b2e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .homes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            width: 240px;
+            border-radius: 10px;
+        }
+    
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #343b2e;
+            color: white;
+        }
+        .brand-name {
+    color:  #032204;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f5ef;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 20px;
+    background: #343b2e;
+}
+
+#formMessage {
+    text-align: center;
+    color: #343b2e;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    
+<header>
+    <b class="brand-name">Prafull &amp; Co. Estates.</b>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#homes">Properties</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Find Your Dream Home</h1>
+    <p>Beautiful spaces. Better living.</p>
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
+         alt="Beautiful home">
+    <br><br>
+    <button onclick="showMessage()">Explore Properties</button>
+    <p class="welcome">WELCOME TO</p>
+<h1>Prafull &amp; Co. Estates</h1>
+<p>Find Your Perfect Place to Call Home.</p>
+</section>
+
+<h2 style="text-align:center" id="homes">Our Properties</h2>
+
+<div class="homes" id="propertyList"></div>
+
+<section id="about" style="padding:40px 20px; text-align:center;">
+    <h2>About Us</h2>
+    <p>We help you find your dream home.</p>
+    <p>Your trusted partner in real estate.</p>
+</section>
+
+<section id="services" style="padding:40px 20px; text-align:center;">
+    <h2>Our Services</h2>
+    <p>Buy a Property</p>
+    <p>Sell a Property</p>
+    <p>Rent a Property</p>
+</section>
+
+
+<section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Find your dream home? Get in touch with us!</p>
+
+    <form class="contact-form" onsubmit="sendMessage(event)">
+        <label for="name">Full Name</label>
+        <input type="text" id="name"
+               placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email"
+               placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone"
+               placeholder="Enter your phone number" required>
+
+        <label for="property">Interested Property</label>
+        <select id="property" required>
+            <option value="">Select Property</option>
+            <option>Luxury Villa</option>
+            <option>Modern Apartment</option>
+            <option>Family House</option>
+            <option>Luxury Bungalow</option>
+            <option>Duplex House</option>
+            <option>Luxury Penthouse</option>
+        </select>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" rows="5"
+                  placeholder="Write your message here..."
+                  required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p id="formMessage"></p>
+    </form>
+</section>
+
+
+<footer>
+    <p>© 2026 Prafull & Co. Estates </p>
+    <p>Find a place to call home.</p>
+</footer>
+
+<script>
+    const homes = [
+        {
+            name: "Luxury Villa",
+            price: "₹1 Crore",
+            image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500"
+        },
+        {
+            name: "Modern Apartment",
+            price: "₹80 Lakh",
+            image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=500"
+        },
+        {
+            name: "Family House",
+            price: "₹95 Lakh",
+            image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500"
+        },
+        {
+            name: "Luxury Bungalow",
+            price: "₹2 Crore",
+            image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500"
+        },
+        {
+            name: "Duplex House",
+            price: "₹3 Crore",
+            image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500"
+        },
+        {
+            name: "Luxury Penthouse",
+            price: "₹8 Crore",
+            image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500"
+        }
+    ];
+
+    const list = document.getElementById("propertyList");
+
+    homes.forEach(function(home) {
+        list.innerHTML += `
+            <div class="card">
+                <img src="${home.image}" alt="${home.name}">
+                <h3>${home.name}</h3>
+                <p>${home.price}</p>
+                <button onclick="alert('${home.name} - ${home.price}')">
+                    View Details
+                </button>
+            </div>
+        `;
+    });
+
+    function showMessage() {
+        document.getElementById("homes").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+    
+function sendMessage(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    document.getElementById("formMessage").textContent =
+        "Thank you, " + name +
+        "! Your form has been submitted successfully.";
+
+    event.target.reset();
+}
+
+</script>
+
+</body>
+</html>
